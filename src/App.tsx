@@ -1,34 +1,35 @@
-import { RecycleSchema, recycleArraySchema, RecycleArraySchema, getRecycleCsv } from './RecycleInvoice';
 import {
-  useForm,
-  useFieldArray,
-  UseFormRegister,
-  FieldErrors,
-  useWatch,
   Control,
-  useController,
+  FieldErrors,
+  UseFormRegister,
   UseFormSetValue,
+  useController,
+  useFieldArray,
+  useForm,
+  useWatch,
 } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Unstable_Grid2';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Autocomplete from '@mui/material/Autocomplete';
-import { BRANCH_OFFICE_NAME, KANA, OFICIAL_STAMP_CARACTER } from './Data';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import CloseIcon from '@mui/icons-material/Close';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
+import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Unstable_Grid2';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import createTheme from '@mui/material/styles/createTheme';
+import { BRANCH_OFFICE_NAME, KANA, OFICIAL_STAMP_CARACTER } from './Data';
+import { RecycleArraySchema, RecycleSchema, getRecycleCsv, recycleArraySchema } from './RecycleInvoice';
 
 const defaultRecycle: RecycleSchema = {
   carClass: '1',
@@ -46,6 +47,7 @@ const useRecycleForm = () => {
     formState: { errors },
   } = useForm<RecycleArraySchema>({
     resolver: zodResolver(recycleArraySchema),
+    reValidateMode: 'onBlur',
     defaultValues: {
       recycles: [defaultRecycle],
     },
