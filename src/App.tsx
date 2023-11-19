@@ -28,6 +28,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 
 const defaultRecycle: RecycleSchema = {
   carClass: '1',
@@ -284,7 +285,14 @@ function App() {
             リサイクル料インボイス一括作成
           </Typography>
           <Box>
-            <Button sx={{ color: '#fff' }}>GitHub</Button>
+            <Link
+              href="https://github.com/mizuki-momose/batch-acquisition-recycle-invoice"
+              target="_blank"
+              rel="noopener"
+              sx={{ color: '#fff' }}
+            >
+              GitHub
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
