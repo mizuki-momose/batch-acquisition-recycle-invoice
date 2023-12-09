@@ -4,9 +4,11 @@
 
 ## 使い方
 
-[surge](https://surge.sh/)にて公開しています。
+surgeにて公開しています。
 
-[こちら](http://batch-acquisition-recycle-invoice.surge.sh/)から使用してください。
+`http://batch-acquisition-recycle-invoice.surge.sh/`
+
+リンク貼ると強制HTTPSになってしまうのでURLをアドレスバーにコピペしてください
 
 ## なぜsurgeで公開しているのですか？
 
